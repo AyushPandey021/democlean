@@ -1,0 +1,102 @@
+/* ============================================================
+   Shop Page Styles
+   ============================================================ */
+
+.shop__hero {
+  position: relative;
+  padding: 160px 0 60px;
+  overflow: hidden;
+}
+
+.shop__hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shop__hero-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(103, 80, 164, 0.08), transparent 70%);
+  filter: blur(80px);
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shop__hero-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.shop__hero-subtitle {
+  color: var(--on-surface-variant);
+  max-width: 500px;
+}
+
+/* Filter Bar */
+.shop__filters {
+  margin-bottom: var(--space-md);
+}
+
+.shop__filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  width: fit-content;
+}
+
+.shop__filter-btn {
+  padding: 10px 20px;
+  font-family: var(--font-headline);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--on-surface-variant);
+  border-radius: var(--rounded-full);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.shop__filter-btn:hover {
+  color: var(--on-surface);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.shop__filter-btn--active {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+/* Products Grid */
+.shop__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .shop__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .shop__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop__filter-bar {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .shop__hero {
+    padding: 120px 0 40px;
+  }
+}
