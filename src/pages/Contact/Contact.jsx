@@ -1,218 +1,88 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import config from '../../config.js';
 import useScrollReveal from '../../hooks/useScrollReveal.js';
 import './Contact.css';
 
 const faqItems = [
-  {
-    question: 'What surfaces are DEMOCLEAN products safe for?',
-    answer: 'Our formulas are engineered and tested for all common household surfaces including hardwood, tile, marble, laminate, vinyl, and sealed concrete. Always test on an inconspicuous area first for specialty surfaces.',
-  },
-  {
-    question: 'How does the 14-day dust repel technology work?',
-    answer: 'Our hydrophobic polymer matrix creates an invisible nano-coating on surfaces that reduces static charge accumulation, which is the primary mechanism by which dust adheres to surfaces.',
-  },
-  {
-    question: 'Are DEMOCLEAN products safe for pets and children?',
-    answer: 'Yes. All DEMOCLEAN formulas are VOC-free and have undergone rigorous dermatological and respiratory safety testing. Our Bio-Clean line is additionally certified for households with sensitive occupants.',
-  },
-  {
-    question: 'What is your shipping policy?',
-    answer: 'We offer free standard shipping on all orders over $100. Standard delivery takes 3-5 business days. Express shipping (1-2 days) is available at checkout for an additional fee.',
-  },
+  { question: 'Which fragrance should I choose?', answer: 'Choose Jasmine for a bright, fresh floral feel or Rose for a warmer, classic floral fragrance.' },
+  { question: 'Which pack size is right for me?', answer: '500 ml and 1 L packs work well for regular home use. Larger packs are useful for bigger homes, offices, shops, and frequent cleaning.' },
+  { question: 'How can I place an order?', answer: 'Use any Order on WhatsApp button on the website and our team can confirm the product, pack size, price, and delivery details.' },
 ];
 
 const Contact = () => {
   const revealRef = useScrollReveal();
-  const [openFaq, setOpenFaq] = useState(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
   const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
+  const whatsappUrl = config.getWhatsAppUrl('Hi DEMOCLEAN, I need help with a product or order.');
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   return (
-    <main className="contact page-enter" id="contact-page">
-      {/* Hero */}
-      <section className="contact__hero">
-        <div className="contact__hero-bg">
-          <div className="contact__hero-orb" />
-        </div>
-        <div className="container">
-          <span className="label-caps" style={{ color: 'var(--accent-aqua)' }}>
-            GET IN TOUCH
-          </span>
-          <h1 className="contact__hero-title">Initiate Contact</h1>
-          <p className="body-lg contact__hero-subtitle">
-            Direct comms established. Connect with our engineering and support teams
-            to optimize your DEMOCLEAN experience.
-          </p>
+    <main className="contact page-enter" ref={revealRef}>
+      <section className="contact-hero">
+        <div className="container contact-hero__inner">
+          <span className="eyebrow">Talk to DEMOCLEAN</span>
+          <h1>Let’s make your floors <span className="text-red">feel fresh.</span></h1>
+          <p>Need product advice, order help, or business information? Our team is ready to help.</p>
         </div>
       </section>
 
-      {/* Contact Grid */}
-      <section className="contact__main section" ref={revealRef}>
-        <div className="container">
-          <div className="contact__grid">
-            {/* Info Cards */}
-            <div className="contact__info">
-              <div className="contact__info-card glass-card scroll-reveal delay-1" id="contact-hq">
-                <div className="contact__info-icon">
-                  <span className="material-icons">location_on</span>
-                </div>
-                <div>
-                  <h3 className="label-caps">Global HQ</h3>
-                  <p>Level 42, Nexus Tower<br />Cybernetic District, Neo-Tokyo 100-0001</p>
-                </div>
-              </div>
+      <section className="contact-main section">
+        <div className="container contact-main__grid">
+          <div className="contact-main__details scroll-reveal">
+            <span className="eyebrow">Quick support</span>
+            <h2>The easiest way to reach us.</h2>
+            <p>For fast product and order support, send us a WhatsApp message. You can also write to us by email using the details below.</p>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="contact-channel contact-channel--whatsapp">
+              <span className="material-icons">chat</span>
+              <div><strong>WhatsApp</strong><small>Chat about products and orders</small></div>
+              <span className="material-icons">arrow_outward</span>
+            </a>
+            <a href={`mailto:${config.contactEmail}`} className="contact-channel">
+              <span className="material-icons">mail</span>
+              <div><strong>Email</strong><small>{config.contactEmail}</small></div>
+              <span className="material-icons">arrow_outward</span>
+            </a>
+            <div className="contact-main__hours"><span className="material-icons">schedule</span><p><strong>Support hours</strong><br />Monday–Saturday, 9:00 AM–7:00 PM</p></div>
+          </div>
 
-              <div className="contact__info-card glass-card scroll-reveal delay-2" id="contact-email">
-                <div className="contact__info-icon contact__info-icon--aqua">
-                  <span className="material-icons">email</span>
-                </div>
-                <div>
-                  <h3 className="label-caps">Support Channel</h3>
-                  <a href="mailto:comms@democlean.sys" className="contact__info-link">
-                    comms@democlean.sys
-                  </a>
-                </div>
+          <div className="contact-form scroll-reveal delay-1">
+            {submitted ? (
+              <div className="contact-form__success">
+                <span className="material-icons">check_circle</span>
+                <h3>Thank you!</h3>
+                <p>Your message is ready. For the fastest response, please also contact us on WhatsApp.</p>
+                <button className="btn btn-secondary" onClick={() => setSubmitted(false)}>Send another message</button>
               </div>
-
-              <div className="contact__info-card glass-card scroll-reveal delay-3" id="contact-phone">
-                <div className="contact__info-icon contact__info-icon--lime">
-                  <span className="material-icons">phone</span>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="contact-form__heading"><span className="chip">SEND A MESSAGE</span><h3>How can we help?</h3></div>
+                <div className="contact-form__row">
+                  <label><span className="label-caps">Your name</span><input className="input-field" name="name" placeholder="Full name" required /></label>
+                  <label><span className="label-caps">Phone number</span><input className="input-field" type="tel" name="phone" placeholder="Your number" required /></label>
                 </div>
-                <div>
-                  <h3 className="label-caps">Direct Line</h3>
-                  <a href="tel:+18005550199" className="contact__info-link">
-                    +1.800.555.0199
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="contact__form-wrapper glass-card scroll-reveal delay-2" id="contact-form-wrapper">
-              <h2>Transmit Message</h2>
-              {submitted ? (
-                <div className="contact__success">
-                  <span className="material-icons" style={{ fontSize: '48px', color: 'var(--accent-lime)' }}>
-                    check_circle
-                  </span>
-                  <h3>Message Transmitted</h3>
-                  <p>Our team will respond within 24 hours.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="contact__form" id="contact-form">
-                  <div className="contact__form-row">
-                    <div className="contact__form-group">
-                      <label className="label-caps" htmlFor="contact-name">Identifier</label>
-                      <input
-                        type="text"
-                        id="contact-name"
-                        name="name"
-                        className="input-field"
-                        placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="contact__form-group">
-                      <label className="label-caps" htmlFor="contact-email-input">Comm Channel</label>
-                      <input
-                        type="email"
-                        id="contact-email-input"
-                        name="email"
-                        className="input-field"
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="contact__form-group">
-                    <label className="label-caps" htmlFor="contact-subject">Subject Vector</label>
-                    <input
-                      type="text"
-                      id="contact-subject"
-                      name="subject"
-                      className="input-field"
-                      placeholder="What's this about?"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <div className="contact__form-group">
-                    <label className="label-caps" htmlFor="contact-message">Message Payload</label>
-                    <textarea
-                      id="contact-message"
-                      name="message"
-                      className="input-field"
-                      placeholder="Your message..."
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <button type="submit" className="btn btn-primary contact__submit-btn" id="contact-submit">
-                    <span className="material-icons">send</span>
-                    Transmit
-                  </button>
-                </form>
-              )}
-            </div>
+                <label><span className="label-caps">Email address</span><input className="input-field" type="email" name="email" placeholder="you@example.com" required /></label>
+                <label><span className="label-caps">Message</span><textarea className="input-field" name="message" placeholder="Tell us what you need..." required /></label>
+                <button type="submit" className="btn btn-primary">Send message <span className="material-icons">arrow_forward</span></button>
+              </form>
+            )}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="contact__faq section" id="faq-section">
-        <div className="container">
-          <div className="contact__faq-header scroll-reveal">
-            <span className="label-caps" style={{ color: 'var(--accent-aqua)' }}>
-              KNOWLEDGE BASE
-            </span>
-            <h2>Systems FAQ</h2>
-          </div>
-
-          <div className="contact__faq-list">
+      <section className="contact-faq section section--soft">
+        <div className="container contact-faq__grid">
+          <div className="section-heading scroll-reveal"><span className="eyebrow">Helpful answers</span><h2>Before you <span className="text-red">ask.</span></h2><p>Quick answers to common DEMOCLEAN questions.</p></div>
+          <div className="contact-faq__list scroll-reveal delay-1">
             {faqItems.map((faq, index) => (
-              <div
-                key={index}
-                className={`contact__faq-item glass-card scroll-reveal delay-${index + 1}`}
-                id={`faq-item-${index}`}
-              >
-                <button
-                  className="contact__faq-question"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                >
-                  <span>{faq.question}</span>
-                  <span className={`material-icons contact__faq-icon ${openFaq === index ? 'contact__faq-icon--open' : ''}`}>
-                    expand_more
-                  </span>
+              <div key={faq.question} className={`contact-faq__item ${openFaq === index ? 'active' : ''}`}>
+                <button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} aria-expanded={openFaq === index}>
+                  <span>{faq.question}</span><span className="material-icons">add</span>
                 </button>
-                <div className={`contact__faq-answer ${openFaq === index ? 'contact__faq-answer--open' : ''}`}>
-                  <p>{faq.answer}</p>
-                </div>
+                <div><p>{faq.answer}</p></div>
               </div>
             ))}
           </div>

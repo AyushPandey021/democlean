@@ -1,72 +1,50 @@
-import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
-import { useEffect, lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer.jsx';
-import GlowCursor from './components/GlowCursor/GlowCursor.jsx';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton.jsx';
 import './App.css';
 
-// Lazy load pages for code splitting
 const Home = lazy(() => import('./pages/Home/Home.jsx'));
 const Shop = lazy(() => import('./pages/Shop/Shop.jsx'));
 const ProductDetail = lazy(() => import('./pages/ProductDetail/ProductDetail.jsx'));
 const About = lazy(() => import('./pages/About/About.jsx'));
 const Contact = lazy(() => import('./pages/Contact/Contact.jsx'));
 
-// Loading fallback component
 const PageLoader = () => (
-  <div className="page-loader" id="page-loader">
-    <div className="page-loader__spinner" />
-    <p className="page-loader__text">Loading...</p>
+  <div className="page-loader" aria-label="Loading page">
+    <span className="page-loader__mark">D</span>
+    <span className="page-loader__bar" />
   </div>
 );
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [pathname]);
+
   return null;
 };
 
-const App = () => {
-  return (
-    <div className="app" id="app-root">
-      {/* Animated Background Mesh */}
-      <div className="mesh-bg" aria-hidden="true">
-        <div className="mesh-blob mesh-blob-1" />
-        <div className="mesh-blob mesh-blob-2" />
-        <div className="mesh-blob mesh-blob-3" />
-      </div>
-
-      {/* Glow Cursor */}
-      <GlowCursor />
-
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Scroll Reset */}
-      <ScrollToTop />
-
-      {/* Routes with Suspense for lazy loading */}
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Shop />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </Suspense>
-
-      {/* Footer */}
-      <Footer />
-
-      {/* WhatsApp Floating Button */}
-      <WhatsAppButton />
-    </div>
-  );
-};
+const App = () => (
+  <div className="app">
+    <Navbar />
+    <ScrollToTop />
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Shop />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Suspense>
+    <Footer />
+    <WhatsAppButton />
+  </div>
+);
 
 export default App;

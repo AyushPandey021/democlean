@@ -1,56 +1,41 @@
-import { useEffect } from 'react';
-import useScrollReveal from '../../hooks/useScrollReveal.js';
 import ProductCard from '../../components/ProductCard/ProductCard.jsx';
+import useScrollReveal from '../../hooks/useScrollReveal.js';
 import { products } from '../../data/products.js';
 import './Shop.css';
 
 const Shop = () => {
   const revealRef = useScrollReveal();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <main className="shop page-enter" id="shop-page">
-      {/* Hero */}
-      <section className="shop__hero">
-        <div className="shop__hero-bg">
-          <div className="shop__hero-orb" />
-        </div>
-        <div className="container">
-          <span className="label-caps" style={{ color: 'var(--accent-aqua)' }}>
-            THE COLLECTION
-          </span>
-          <h1 className="shop__hero-title">Our Collection</h1>
-          <p className="body-lg shop__hero-subtitle">
-            Engineered cleanliness for every surface. Discover the future of home care.
-          </p>
+    <main className="shop page-enter" ref={revealRef}>
+      <section className="shop-hero">
+        <div className="container shop-hero__inner">
+          <div>
+            <span className="eyebrow">DEMOCLEAN range</span>
+            <h1>Find your <span className="text-red">fresh.</span></h1>
+            <p>Everyday floor cleaners in bright jasmine and classic rose fragrances, available in practical sizes for every home.</p>
+          </div>
+          <div className="shop-hero__mark" aria-hidden="true">D</div>
         </div>
       </section>
 
-      {/* Filter Bar */}
-      <section className="shop__filters">
+      <section className="shop-products section">
         <div className="container">
-          <div className="shop__filter-bar glass-card">
-            <button className="shop__filter-btn shop__filter-btn--active" id="filter-all">
-              All Products
-            </button>
-            <button className="shop__filter-btn" id="filter-surfaces">Surfaces</button>
-            <button className="shop__filter-btn" id="filter-specialty">Specialty</button>
-            <button className="shop__filter-btn" id="filter-eco">Eco-Line</button>
+          <div className="shop-products__bar scroll-reveal">
+            <p><strong>{products.length} products</strong> designed for everyday floor care</p>
+            <span>Jasmine • Rose • Family packs</span>
+          </div>
+          <div className="shop-products__grid">
+            {products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="shop__products section" ref={revealRef}>
-        <div className="container">
-          <div className="shop__grid">
-            {products.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
-          </div>
+      <section className="shop-assurance section--soft">
+        <div className="container shop-assurance__grid">
+          <div><span className="material-icons">verified</span><h3>Trusted quality</h3><p>Dependable products for regular cleaning routines.</p></div>
+          <div><span className="material-icons">inventory_2</span><h3>Useful pack sizes</h3><p>Choose the quantity that fits your space and frequency.</p></div>
+          <div><span className="material-icons">support_agent</span><h3>Easy ordering</h3><p>Message us directly on WhatsApp for product help.</p></div>
         </div>
       </section>
     </main>

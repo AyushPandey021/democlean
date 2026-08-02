@@ -1,48 +1,20 @@
-/* ============================================================
-   App-level Styles
-   ============================================================ */
-
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.app { min-height: 100vh; display: flex; flex-direction: column; overflow: clip; }
+.app > main { flex: 1; }
+.page-loader { min-height: 70vh; display: grid; place-content: center; gap: 14px; }
+.page-loader__mark {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-inline: auto;
+  color: white;
+  background: var(--red);
+  border-radius: 18px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-red);
 }
-
-.app > main {
-  flex: 1;
-}
-
-/* ============================================================
-   Page Loader (for lazy-loaded routes)
-   ============================================================ */
-
-.page-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 400px;
-  gap: 1.5rem;
-}
-
-.page-loader__spinner {
-  width: 48px;
-  height: 48px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top-color: var(--accent-aqua, #00e5ff);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-.page-loader__text {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.875rem;
-  letter-spacing: 0.5px;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
+.page-loader__bar { width: 100px; height: 4px; overflow: hidden; background: var(--red-soft); border-radius: 999px; }
+.page-loader__bar::after { content: ''; display: block; width: 45%; height: 100%; background: var(--red); border-radius: inherit; animation: loading 900ms ease-in-out infinite alternate; }
+@keyframes loading { to { transform: translateX(125%); } }
