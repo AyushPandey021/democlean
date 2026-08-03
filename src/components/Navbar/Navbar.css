@@ -17,11 +17,11 @@
 }
 
 .navbar__inner {
-  height: 70px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 24px;
 }
 
 .navbar--scrolled .navbar__inner {
@@ -39,8 +39,8 @@
 .navbar--scrolled .navbar__notice { display: none; }
 
 .brand-logo { position: relative; z-index: 1002; flex: 0 0 auto; }
-.brand-logo__crop { width: 176px; height: 50px; display: block; overflow: hidden; }
-.brand-logo__crop img { width: 190px; max-width: none; transform: translate(-7px, -69px); }
+.brand-logo__crop { width: 160px; height: 46px; display: block; overflow: hidden; }
+.brand-logo__crop img { width: 175px; max-width: none; transform: translate(-5px, -65px); }
 
 .navbar__nav { display: flex; align-items: center; gap: 28px; }
 .navbar__link { position: relative; color: #343434; font-size: 0.78rem; font-weight: 800; }
@@ -58,8 +58,8 @@
 .navbar__link:hover, .navbar__link--active { color: var(--red); }
 .navbar__link:hover::after, .navbar__link--active::after { transform: scaleX(1); }
 .navbar__actions { display: flex; align-items: center; gap: 14px; }
-.navbar__shop-link { display: flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.82rem; font-weight: 800; }
-.navbar__shop-link .material-icons { font-size: 18px; }
+.navbar__shop-link { display: flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.78rem; font-weight: 800; }
+.navbar__shop-link .material-icons { font-size: 16px; }
 .navbar__hamburger, .navbar .navbar__mobile-cta { display: none; }
 
 @media (max-width: 860px) {
