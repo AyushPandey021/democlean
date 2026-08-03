@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+/* ==========================================================================
+   HOME HERO
+   ========================================================================== */
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 .home-hero {
   position: relative;
   min-height: 700px;
@@ -39,10 +45,18 @@
 .home-hero__content h1 {
   margin-bottom: 20px;
   font-size: clamp(3.25rem, 4.8vw, 5.15rem);
+<<<<<<< HEAD
+=======
+  line-height: 1.02;
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 }
 .home-hero__content > p {
   max-width: 500px;
   font-size: 0.95rem;
+<<<<<<< HEAD
+=======
+  line-height: 1.65;
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 }
 .home-hero__actions {
   display: flex;
@@ -104,11 +118,18 @@
   border-radius: 50%;
   filter: blur(18px);
 }
+<<<<<<< HEAD
 .home-hero__red-card > video {
   position: relative;
   z-index: 2;
 border-radius: 30px;
   width: 128%;
+=======
+.home-hero__red-card > img {
+  position: relative;
+  z-index: 2;
+  width: 108%;
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
   max-width: none;
   margin-left: -4%;
   clip-path: inset(0 0 7% 0 round 0);
@@ -194,6 +215,7 @@ border-radius: 30px;
   margin: 0 24px;
   color: var(--red);
 }
+<<<<<<< HEAD
 .home-video {
   position: relative;
   overflow: hidden;
@@ -522,7 +544,433 @@ border-radius: 30px;
 .home-cta__whatsapp .material-icons {
   font-size: 17px;
 }
+=======
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 
+/* ==========================================================================
+   HOME VIDEO — content locked left, video block locked right via `order`
+   ========================================================================== */
+.home-video {
+  position: relative;
+  overflow: hidden;
+}
+.home-video::before {
+  content: "DEMOCLEAN";
+  position: absolute;
+  left: -20px;
+  bottom: -42px;
+  color: rgba(241, 11, 18, 0.035);
+  font-family: var(--font-display);
+  font-size: 12vw;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 1;
+  pointer-events: none;
+}
+.home-video__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.95fr 0.82fr 0.62fr;
+  gap: 26px;
+  align-items: center;
+}
+
+/* Explicit order guarantees the video stays on the right regardless
+   of source order in the markup. */
+.home-video__content {
+  order: 1;
+  padding-right: 26px;
+}
+.home-video__player {
+  order: 2;
+}
+.home-video__poster {
+  order: 3;
+}
+
+.home-video__content h2 {
+  font-size: clamp(2.35rem, 3.5vw, 3.75rem);
+  line-height: 1.05;
+}
+.home-video__content > p {
+  margin: 22px 0 28px;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.home-video__facts {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.home-video__facts div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.home-video__facts strong {
+  color: var(--red);
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  line-height: 1;
+}
+.home-video__facts span {
+  color: #666;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.home-video__player {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  background: #06190e;
+  border: 10px solid white;
+  border-radius: 28px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition);
+}
+.home-video__player:hover {
+  box-shadow: var(--shadow-lg, var(--shadow-md));
+}
+.home-video__player video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  background: #06190e;
+}
+.home-video__label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  color: white;
+  background: rgba(15, 15, 15, 0.78);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+}
+.home-video__label .material-icons {
+  font-size: 16px;
+}
+.home-video__poster {
+  position: relative;
+  height: 410px;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(24px);
+}
+.home-video__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.home-video__poster::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 36%;
+  background: linear-gradient(transparent, rgba(0, 24, 11, 0.92));
+}
+.home-video__poster span {
+  position: absolute;
+  z-index: 2;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  color: white;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==========================================================================
+   BENEFITS
+   ========================================================================== */
+.home-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.home-benefit {
+  position: relative;
+  min-height: 270px;
+  padding: 32px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+.home-benefit:hover {
+  transform: translateY(-6px);
+  border-color: rgba(241, 11, 18, 0.3);
+  box-shadow: var(--shadow-md);
+}
+.home-benefit__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 42px;
+  color: white;
+  background: var(--red);
+  border-radius: 16px;
+  box-shadow: var(--shadow-red);
+}
+.home-benefit__index {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: #eee5e1;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+.home-benefit h3 {
+  margin-bottom: 12px;
+}
+.home-benefit p {
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   PRODUCTS
+   ========================================================================== */
+.home-products__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.home-products__header .section-heading {
+  margin-bottom: 0;
+}
+.home-products__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  color: var(--red);
+  font-size: 0.82rem;
+  font-weight: 800;
+  transition: gap var(--transition);
+}
+.home-products__all:hover {
+  gap: 10px;
+}
+.home-products__all .material-icons {
+  font-size: 18px;
+}
+.home-products__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 42px;
+}
+
+/* ==========================================================================
+   STORY
+   ========================================================================== */
+.home-story__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: center;
+}
+.home-story__image {
+  position: relative;
+}
+.home-story__image img {
+  width: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: var(--shadow-md);
+}
+.home-story__stamp {
+  position: absolute;
+  right: -28px;
+  bottom: -28px;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-content: center;
+  color: white;
+  background: var(--red);
+  border: 8px solid var(--paper);
+  border-radius: 50%;
+  text-align: center;
+  transform: rotate(-8deg);
+}
+.home-story__stamp strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+}
+.home-story__stamp span {
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.home-story__content > p {
+  margin: 24px 0 28px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+.home-story__points {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+.home-story__points div {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.home-story__points .material-icons {
+  margin-top: 2px;
+  color: var(--red);
+  font-size: 21px;
+}
+.home-story__points p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+.home-story__points strong {
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   CTA
+   ========================================================================== */
+.home-cta {
+  padding: 20px 0 100px;
+}
+.home-cta__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 58px;
+  overflow: hidden;
+  color: white;
+  background: var(--ink);
+  border-radius: 30px;
+}
+.home-cta__inner::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  right: -100px;
+  top: -150px;
+  background: var(--red);
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+.home-cta__inner > * {
+  position: relative;
+  z-index: 2;
+}
+.home-cta__inner .eyebrow {
+  color: #ff979b;
+}
+.home-cta__inner h2 {
+  max-width: 650px;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.08;
+}
+.home-cta__inner h2 span {
+  color: #ff585d;
+}
+.home-cta__actions {
+  flex: 0 0 auto;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+.home-cta__whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ddd;
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: color var(--transition);
+}
+.home-cta__whatsapp:hover {
+  color: white;
+}
+.home-cta__whatsapp .material-icons {
+  font-size: 17px;
+}
+
+/* ==========================================================================
+   LAPTOP TUNING (1024px – 1366px)
+   Targets common 13"–15" laptop viewports so nothing feels oversized,
+   cramped, or clipped between the tablet and full-desktop breakpoints.
+   Video block stays firmly on the right at this size.
+   ========================================================================== */
+@media (max-width: 1366px) and (min-width: 1024px) {
+  .home-hero {
+    padding: 132px 0 60px;
+  }
+  .home-hero__grid {
+    gap: 42px;
+  }
+  .home-hero__shape {
+    width: 58vw;
+    height: 560px;
+  }
+  .home-hero__red-card {
+    min-height: 400px;
+  }
+  .home-video__grid {
+    grid-template-columns: 1fr 0.85fr 0.5fr;
+    gap: 20px;
+  }
+  .home-video__content {
+    padding-right: 12px;
+  }
+  .home-video__player {
+    height: 440px;
+    border-width: 8px;
+  }
+  .home-video__poster {
+    height: 350px;
+  }
+  .home-benefit {
+    min-height: 250px;
+    padding: 26px;
+  }
+  .home-story__grid {
+    gap: 48px;
+  }
+  .home-story__image img {
+    min-height: 440px;
+  }
+}
+
+/* ==========================================================================
+   TABLET (≤ 980px)
+   ========================================================================== */
 @media (max-width: 980px) {
   .home-hero {
     padding-top: 160px;
@@ -547,8 +995,17 @@ border-radius: 30px;
     grid-template-columns: 1fr 0.82fr;
   }
   .home-video__content {
+<<<<<<< HEAD
     padding-right: 0;
   }
+=======
+    order: 1;
+    padding-right: 0;
+  }
+  .home-video__player {
+    order: 2;
+  }
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
   .home-video__poster {
     display: none;
   }
@@ -573,6 +1030,9 @@ border-radius: 30px;
   }
 }
 
+/* ==========================================================================
+   MOBILE (≤ 680px) — video stacks under content, still visually "next"
+   ========================================================================== */
 @media (max-width: 680px) {
   .home-hero {
     min-height: auto;
@@ -628,7 +1088,15 @@ border-radius: 30px;
   .home-video__grid {
     grid-template-columns: 1fr;
   }
+<<<<<<< HEAD
   .home-video__player {
+=======
+  .home-video__content {
+    order: 1;
+  }
+  .home-video__player {
+    order: 2;
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
     width: min(100%, 360px);
     height: 530px;
     margin-inline: auto;
@@ -671,6 +1139,7 @@ border-radius: 30px;
   .home-cta__actions .btn {
     width: 100%;
   }
+<<<<<<< HEAD
 }
 
 /* ==========================================================================
@@ -727,3 +1196,6 @@ border-radius: 30px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
+=======
+}
+>>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
