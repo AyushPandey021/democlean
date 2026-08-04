@@ -42,7 +42,6 @@
   display: none;
 }
 
-<<<<<<< HEAD
 .brand-logo {
   position: relative;
   z-index: 1002;
@@ -59,11 +58,10 @@
   max-width: none;
   transform: translate(-7px, -69px);
 }
-=======
+
 .brand-logo { position: relative; z-index: 1002; flex: 0 0 auto; }
 .brand-logo__crop { width: 160px; height: 46px; display: block; overflow: hidden; }
 .brand-logo__crop img { width: 175px; max-width: none; transform: translate(-5px, -65px); }
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 
 .navbar__nav {
   display: flex;
@@ -87,7 +85,7 @@
   transform: scaleX(0);
   transition: transform var(--transition);
 }
-<<<<<<< HEAD
+
 .navbar__link:hover,
 .navbar__link--active {
   color: var(--red);
@@ -116,14 +114,13 @@
 .navbar .navbar__mobile-cta {
   display: none;
 }
-=======
+
 .navbar__link:hover, .navbar__link--active { color: var(--red); }
 .navbar__link:hover::after, .navbar__link--active::after { transform: scaleX(1); }
 .navbar__actions { display: flex; align-items: center; gap: 14px; }
 .navbar__shop-link { display: flex; align-items: center; gap: 6px; color: var(--red); font-size: 0.78rem; font-weight: 800; }
 .navbar__shop-link .material-icons { font-size: 16px; }
 .navbar__hamburger, .navbar .navbar__mobile-cta { display: none; }
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
 
 @media (max-width: 860px) {
   .navbar__notice {

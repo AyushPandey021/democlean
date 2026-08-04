@@ -23,34 +23,33 @@ const benefits = [
   },
 ];
 
-const storyContent = {
-  heading: "DEMOCLEAN™ INDIA - Our Story",
-  paragraphs: [
-    "Every successful brand begins with a vision, a purpose, and the determination to make a meaningful difference. DEMOCLEAN™ was born from that very vision—to provide Indian families, businesses, and institutions with cleaning and hygiene solutions that combine superior quality, reliable performance, and exceptional value.",
-    "Founded by Mr. Sachchitanand Pandey, under the banner of Vishal & Vishal Marketing Company, DEMOCLEAN™ represents years of dedication, perseverance, and an unwavering commitment to excellence.",
-    "The journey of DEMOCLEAN™ began with a simple belief: every home deserves a cleaner, healthier, and safer environment. Recognizing the growing need for dependable cleaning products in both urban and rural markets, Mr. Pandey embarked on a mission to manufacture products that could deliver powerful cleaning performance while remaining affordable for everyday use.",
-    "Over the years, DEMOCLEAN™ has steadily expanded its product portfolio to address a wide range of household and institutional cleaning needs. Today, the brand proudly offers an extensive selection of products, including Herbal White Floor Cleaners, Scented Floor Cleaners, White Phenyl, Coloured Phenyl, Super Strong Black Phenyl, Toilet Cleaners, Super Strong Toilet Cleaners, Dishwash Solutions, Naphthalene Balls, and other hygiene products.",
-    "At DEMOCLEAN™, we believe that hygiene is not just about appearance—it is about protecting families, promoting healthier lifestyles, and creating environments where people can live and work with confidence. Every product manufactured by our company reflects this philosophy, combining carefully selected ingredients, modern manufacturing practices, and stringent quality control measures.",
-    "As the company continues to grow, the vision of the founder is being carried forward by the next generation. Mr. Vishal Pandey, the founder's son, actively contributes to the company's future by focusing on brand development, digital transformation, modern marketing strategies, product innovation, and business expansion.",
-    "Our long-term vision extends beyond manufacturing cleaning products. We aspire to build a nationally recognized home care and hygiene brand that stands for trust, innovation, affordability, and customer satisfaction."
-  ],
-  leadership: [
-    { name: "Mr. Sachchitanand Pandey", role: "Founder" },
-    { name: "Mr. Vishal Pandey", role: "Next Generation Leadership – Brand Development & Marketing" }
-  ],
-  vision: "To become one of India's most trusted home care and hygiene brands by delivering innovative, high-quality, and affordable cleaning solutions that improve everyday life.",
-  mission: "To manufacture reliable, effective, and value-driven hygiene products while building long-term relationships with customers, distributors, retailers, and business partners through quality, integrity, and continuous innovation.",
-  values: [
-    "Quality Without Compromise",
-    "Customer First",
-    "Integrity & Transparency",
-    "Continuous Innovation",
-    "Sustainable Growth",
-    "Commitment to Hygiene",
-    "Made for India"
-  ],
-  tagline: "DEMOCLEAN™ — Cleaning Today. Caring Forever."
-};
+const galleryItems = [
+  {
+    src: "/images/allBottel.png",
+    alt: "DEMOCLEAN product range",
+    label: "Complete Product Range",
+  },
+  {
+    src: "/images/Democlean_Jasmine.png",
+    alt: "DEMOCLEAN Jasmine floor cleaner",
+    label: "Jasmine Floor Cleaner",
+  },
+  {
+    src: "/images/Democlean_Rose.png",
+    alt: "DEMOCLEAN Rose floor cleaner",
+    label: "Rose Floor Cleaner",
+  },
+  {
+    src: "/images/img2.jpeg",
+    alt: "DEMOCLEAN advertising",
+    label: "Advertising Campaign",
+  },
+  {
+    src: "/images/ad.jpeg",
+    alt: "DEMOCLEAN advertisement",
+    label: "Product Promotion",
+  },
+];
 
 const Home = () => {
   const revealRef = useScrollReveal();
@@ -107,23 +106,16 @@ const Home = () => {
               <span className="home-hero__badge">
                 <span className="material-icons">verified</span> Made in India
               </span>
-<<<<<<< HEAD
-          <video
-  src="/videos/../../images/home-video.mp4"
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="w-full h-auto rounded-lg object-cover"
->
-  Your browser does not support the video tag.
-</video>
-=======
-              <img
-                src="/images/allBottel.png"
-                alt="DEMOCLEAN floor cleaner product range"
-              />
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
+              <video
+                src="/videos/../../public/images/home-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto rounded-lg object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
               <div className="home-hero__floating home-hero__floating--top">
                 <strong>2</strong>
                 <span>
@@ -200,14 +192,7 @@ const Home = () => {
               poster="/images/WhatsApp%20Image%202026-08-02%20at%204.13.52%20PM.jpeg"
               aria-label="DEMOCLEAN product showcase video"
             >
-<<<<<<< HEAD
               <source src="/images/home-video.mp4" type="video/mp4" />
-=======
-              <source
-                src="/images/home-video.mp4"
-                type="video/mp4"
-              />
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
               <source
                 src="/images/WhatsApp%20Video%202026-08-02%20at%204.13.52%20PM.mp4"
                 type="video/mp4"
@@ -298,7 +283,6 @@ const Home = () => {
             </div>
           </div>
           <div className="home-story__content scroll-reveal delay-1">
-<<<<<<< HEAD
             <span className="eyebrow">Protecting every home</span>
             <h2>
               Clean is not a luxury. It is{" "}
@@ -334,65 +318,8 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            <Link to="/products" className="btn btn-primary">
-              Discover our products{" "}
-=======
-            <span className="eyebrow">Our Story</span>
-            <h2>DEMOCLEAN™ INDIA</h2>
-            <div className="home-story__full-content">
-              {storyContent.paragraphs.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-              
-              <div className="home-story__leadership">
-                <h3>Leadership</h3>
-                <ul>
-                  {storyContent.leadership.map((leader, index) => (
-                    <li key={index}>
-                      <strong>{leader.name}</strong> - {leader.role}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div className="home-story__vision-mission">
-                <div>
-                  <h4>Our Vision</h4>
-                  <p>{storyContent.vision}</p>
-                </div>
-                <div>
-                  <h4>Our Mission</h4>
-                  <p>{storyContent.mission}</p>
-                </div>
-              </div>
-              
-              <div className="home-story__values">
-                <h4>Our Core Values</h4>
-                <ul>
-                  {storyContent.values.map((value, index) => (
-                    <li key={index}>{value}</li>
-                  ))}
-                </ul>
-              </div>
-              
-              <p className="home-story__tagline"><strong>{storyContent.tagline}</strong></p>
-            </div>
-            
-            <div className="home-story__contact">
-              <h4>Contact Us</h4>
-              <p>
-                <span className="material-icons">email</span>
-                <strong>Email:</strong> vishalandvishal70@gmail.com
-              </p>
-              <p>
-                <span className="material-icons">phone</span>
-                <strong>Mobile:</strong> +91 9098667176
-              </p>
-            </div>
-            
             <Link to="/about" className="btn btn-primary">
               Discover our story{" "}
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
               <span className="material-icons">arrow_forward</span>
             </Link>
           </div>
@@ -403,75 +330,17 @@ const Home = () => {
         <div className="container">
           <div className="section-heading section-heading--center scroll-reveal">
             <span className="eyebrow">Our Products in Action</span>
-<<<<<<< HEAD
             <h2>
               Explore DEMOCLEAN <span className="text-red">Gallery</span>
             </h2>
           </div>
           <div className="home-gallery__grid scroll-reveal delay-1">
-            <div className="home-gallery__item">
-              <img
-                src="/images/allBottel.png"
-                alt="DEMOCLEAN product range"
-                loading="lazy"
-              />
-              <p>Complete Product Range</p>
-            </div>
-            <div className="home-gallery__item">
-              <img
-                src="/images/Democlean_Jasmine.png"
-                alt="DEMOCLEAN Jasmine floor cleaner"
-                loading="lazy"
-              />
-              <p>Jasmine Floor Cleaner</p>
-            </div>
-            <div className="home-gallery__item">
-              <img
-                src="/images/Democlean_Rose.png"
-                alt="DEMOCLEAN Rose floor cleaner"
-                loading="lazy"
-              />
-              <p>Rose Floor Cleaner</p>
-            </div>
-            <div className="home-gallery__item">
-              <img
-                src="/images/img2.jpeg"
-                alt="DEMOCLEAN advertising"
-                loading="lazy"
-              />
-              <p>Advertising Campaign</p>
-            </div>
-            <div className="home-gallery__item">
-              <img
-                src="/images/ad.jpeg"
-                alt="DEMOCLEAN advertisement"
-                loading="lazy"
-              />
-=======
-            <h2>Explore DEMOCLEAN <span className="text-red">Gallery</span></h2>
-          </div>
-          <div className="home-gallery__grid scroll-reveal delay-1">
-            <div className="home-gallery__item">
-              <img src="/images/allBottel.png" alt="DEMOCLEAN product range" loading="lazy" />
-              <p>Complete Product Range</p>
-            </div>
-            <div className="home-gallery__item">
-              <img src="/images/Democlean_Jasmine.png" alt="DEMOCLEAN Jasmine floor cleaner" loading="lazy" />
-              <p>Jasmine Floor Cleaner</p>
-            </div>
-            <div className="home-gallery__item">
-              <img src="/images/Democlean_Rose.png" alt="DEMOCLEAN Rose floor cleaner" loading="lazy" />
-              <p>Rose Floor Cleaner</p>
-            </div>
-            <div className="home-gallery__item">
-              <img src="/images/img2.jpeg" alt="DEMOCLEAN advertising" loading="lazy" />
-              <p>Advertising Campaign</p>
-            </div>
-            <div className="home-gallery__item">
-              <img src="/images/ad.jpeg" alt="DEMOCLEAN advertisement" loading="lazy" />
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
-              <p>Product Promotion</p>
-            </div>
+            {galleryItems.map((item) => (
+              <div className="home-gallery__item" key={item.src}>
+                <img src={item.src} alt={item.alt} loading="lazy" />
+                <p>{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -483,8 +352,6 @@ const Home = () => {
             <h2>
               Bring home the <span>DEMOCLEAN difference.</span>
             </h2>
-<<<<<<< HEAD
-=======
             <div className="home-cta__contact-info">
               <p>
                 <span className="material-icons">email</span>
@@ -495,7 +362,6 @@ const Home = () => {
                 <strong>Mobile:</strong> +91 9098667176
               </p>
             </div>
->>>>>>> 18aaf699da72933dd2b8f0ae8d54778ed71ad724
           </div>
           <div className="home-cta__actions">
             <Link to="/products" className="btn btn-primary">
