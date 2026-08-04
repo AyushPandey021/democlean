@@ -107,7 +107,7 @@ const Home = () => {
                 <span className="material-icons">verified</span> Made in India
               </span>
               <video
-                src="/videos/../../public/images/home-video.mp4"
+                src="../../public/images/home-video.mp4"
                 autoPlay
                 muted
                 loop
