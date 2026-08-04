@@ -9,12 +9,12 @@
 }
 .home-hero__shape {
   position: absolute;
-  top: 70px;
+  top: 80px;
   right: -7%;
   width: 54vw;
   height: 610px;
   background: linear-gradient(145deg, var(--red) 0%, #b90007 100%);
-  border-radius: 0 0 0 38%;
+  border-radius: 10px 20px 0 38%;
   transform: rotate(-2deg);
 }
 .home-hero__shape::before {

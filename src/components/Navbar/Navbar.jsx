@@ -69,9 +69,13 @@ const Navbar = () => {
         </nav>
 
         <div className="navbar__actions">
-          <Link to="/products" className="navbar__shop-link">
-            Shop now <span className="material-icons">arrow_outward</span>
-          </Link>
+       <Link
+  to="/products"
+  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gray-100 hover:shadow-xl"
+>
+  Shop Now
+  <span className="material-icons text-lg">arrow_outward</span>
+</Link>
           <button
             className={`navbar__hamburger ${isMobileOpen ? "navbar__hamburger--open" : ""}`}
             onClick={() => setIsMobileOpen((open) => !open)}

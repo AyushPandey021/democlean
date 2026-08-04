@@ -192,7 +192,10 @@ const Home = () => {
               poster="/images/WhatsApp%20Image%202026-08-02%20at%204.13.52%20PM.jpeg"
               aria-label="DEMOCLEAN product showcase video"
             >
-              <source src="/images/home-video.mp4" type="video/mp4" />
+              <source
+                src="/images/public/images/public/images/WhatsApp Video 2026-08-02 at 4.13.52 PM.mp4"
+                type="video/mp4"
+              />
               <source
                 src="/images/WhatsApp%20Video%202026-08-02%20at%204.13.52%20PM.mp4"
                 type="video/mp4"
