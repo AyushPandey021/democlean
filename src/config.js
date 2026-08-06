@@ -12,6 +12,8 @@ export const config = {
 
   // Contact
   contactEmail: AppConfig.contactEmail,
+  contactPhone: AppConfig.contactPhone,
+  contactPhoneHref: `tel:${AppConfig.contactPhone.replace(/\s/g, '')}`,
 
   // Helper to build WhatsApp URL
   getWhatsAppUrl: (message) => {

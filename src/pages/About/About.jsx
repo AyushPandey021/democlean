@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../../hooks/useScrollReveal.js';
+import config from '../../config.js';
 import './About.css';
 
 const values = [
@@ -96,8 +97,8 @@ const About = () => {
             
             <div className="about-story__contact">
               <h4>Contact Us</h4>
-              <p><span className="material-icons">email</span> <strong>Email:</strong> vishalandvishal70@gmail.com</p>
-              <p><span className="material-icons">phone</span> <strong>Mobile:</strong> +91 9098667176</p>
+              <p><span className="material-icons">email</span> <strong>Email:</strong> <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a></p>
+              <p><span className="material-icons">phone</span> <strong>Mobile:</strong> <a href={config.contactPhoneHref}>{config.contactPhone}</a></p>
             </div>
             
             <p className="about-story__tagline"><strong>DEMOCLEAN™ — Cleaning Today. Caring Forever.</strong></p>

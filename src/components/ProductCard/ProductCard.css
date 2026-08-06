@@ -10,8 +10,12 @@
   box-shadow: var(--shadow-sm);
 }
 .product-card__visual::before { content: ''; position: absolute; width: 270px; height: 270px; border-radius: 50%; filter: blur(10px); opacity: 0.7; }
-.product-card__visual--jasmine::before { background: #ffe500; }
-.product-card__visual--rose::before { background: #ff8aaf; }
+.product-card__visual--black::before { background: #454545; }
+.product-card__visual--white::before { background: #d9ead2; }
+.product-card__visual--green::before { background: #8bd56e; }
+.product-card__visual--purple::before { background: #c293e7; }
+.product-card__visual--yellow::before { background: #ffe259; }
+.product-card__visual--pink::before { background: #ff8fbd; }
 .product-card__visual img { position: relative; z-index: 2; width: 88%; max-height: 385px; object-fit: contain; transition: transform 420ms ease; filter: drop-shadow(0 26px 24px rgba(44, 0, 0, 0.16)); }
 .product-card__visual:hover img { transform: scale(1.055) rotate(-1deg); }
 .product-card__badge { position: absolute; z-index: 3; top: 18px; left: 18px; }

@@ -16,7 +16,7 @@ const ProductCard = ({ product, index = 0 }) => (
       </div>
       <div className="product-card__meta">
         <span>From</span>
-        <strong>₹{product.price}</strong>
+        <strong>₹{product.price}/-</strong>
       </div>
     </div>
   </article>

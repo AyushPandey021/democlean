@@ -45,7 +45,7 @@ const ProductDetail = () => {
             <span className="chip">{product.badge}</span>
             <h1>{product.name}</h1>
             <p className="product-detail__tagline">{product.tagline}</p>
-            <div className="product-detail__price"><span>Starting from</span><strong>₹{product.price}</strong></div>
+            <div className="product-detail__price"><span>Starting from</span><strong>₹{product.price}/-</strong></div>
 
             <div className="product-detail__selector">
               <span className="label-caps">Choose pack size</span>
@@ -56,7 +56,7 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            <a href={orderUrl} target="_blank" rel="noreferrer" className="btn btn-whatsapp product-detail__order"><span className="material-icons">chat</span> Order on WhatsApp</a>
+            <a href={orderUrl} target="_blank" rel="noreferrer" className="btn btn-whatsapp product-detail__order"><span className="material-icons">chat</span> Place Your Bulk Order on WhatsApp</a>
 
             <div className="product-detail__description">
               <p>{product.description}</p>

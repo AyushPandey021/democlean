@@ -14,7 +14,7 @@ const benefits = [
   {
     icon: "local_florist",
     title: "Fresh fragrances",
-    text: "Choose the bright freshness of jasmine or the warm, familiar scent of rose.",
+    text: "Choose from Jasmine, Mogra, Kewda and Lavender, or classic herbal freshness.",
   },
   {
     icon: "home",
@@ -30,14 +30,14 @@ const galleryItems = [
     label: "Complete Product Range",
   },
   {
-    src: "/images/Democlean_Jasmine.png",
-    alt: "DEMOCLEAN Jasmine floor cleaner",
-    label: "Jasmine Floor Cleaner",
+    src: "/images/yellow.png",
+    alt: "DEMOCLEAN Yellow Jasmine Floor Cleaner",
+    label: "Yellow Jasmine Floor Cleaner",
   },
   {
-    src: "/images/Democlean_Rose.png",
-    alt: "DEMOCLEAN Rose floor cleaner",
-    label: "Rose Floor Cleaner",
+    src: "/images/green.png",
+    alt: "DEMOCLEAN Green Mogra Floor Cleaner",
+    label: "Green Mogra Floor Cleaner",
   },
   {
     src: "/images/img2.jpeg",
@@ -117,11 +117,11 @@ const Home = () => {
                 Your browser does not support the video tag.
               </video>
               <div className="home-hero__floating home-hero__floating--top">
-                <strong>2</strong>
+                <strong>6</strong>
                 <span>
-                  signature
+                  powerful
                   <br />
-                  fragrances
+                  variants
                 </span>
               </div>
               <div className="home-hero__floating home-hero__floating--bottom">
@@ -149,7 +149,7 @@ const Home = () => {
           <div className="home-video__content scroll-reveal">
             <span className="eyebrow">See DEMOCLEAN</span>
             <h2>
-              Five fresh choices.{" "}
+              Six fresh choices.{" "}
               <span className="text-red">One trusted clean.</span>
             </h2>
             <p>
@@ -159,7 +159,7 @@ const Home = () => {
             </p>
             <div className="home-video__facts">
               <div>
-                <strong>5</strong>
+                <strong>6</strong>
                 <span>
                   fresh
                   <br />
@@ -358,11 +358,13 @@ const Home = () => {
             <div className="home-cta__contact-info">
               <p>
                 <span className="material-icons">email</span>
-                <strong>Email:</strong> vishalandvishal70@gmail.com
+                <strong>Email:</strong>{" "}
+                <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>
               </p>
               <p>
                 <span className="material-icons">phone</span>
-                <strong>Mobile:</strong> +91 9098667176
+                <strong>Mobile:</strong>{" "}
+                <a href={config.contactPhoneHref}>{config.contactPhone}</a>
               </p>
             </div>
           </div>

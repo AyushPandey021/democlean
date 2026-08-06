@@ -13,7 +13,7 @@ const Shop = () => {
           <div>
             <span className="eyebrow">DEMOCLEAN range</span>
             <h1>Find your <span className="text-red">fresh.</span></h1>
-            <p>Everyday floor cleaners in bright jasmine and classic rose fragrances, available in practical sizes for every home.</p>
+            <p>Powerful phenyl and floor cleaners in six fresh variants, with practical sizes for homes and commercial spaces.</p>
           </div>
           <div className="shop-hero__mark" aria-hidden="true">D</div>
         </div>
@@ -23,7 +23,7 @@ const Shop = () => {
         <div className="container">
           <div className="shop-products__bar scroll-reveal">
             <p><strong>{products.length} products</strong> designed for everyday floor care</p>
-            <span>Jasmine • Rose • Family packs</span>
+            <span>Black • Herbal White • Mogra • Kewda & Lavender • Jasmine • Rose</span>
           </div>
           <div className="shop-products__grid">
             {products.map((product, index) => <ProductCard key={product.id} product={product} index={index} />)}

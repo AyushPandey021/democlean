@@ -4,7 +4,7 @@ import useScrollReveal from '../../hooks/useScrollReveal.js';
 import './Contact.css';
 
 const faqItems = [
-  { question: 'Which fragrance should I choose?', answer: 'Choose Jasmine for a bright, fresh floral feel or Rose for a warmer, classic floral fragrance.' },
+  { question: 'Which cleaner should I choose?', answer: 'Choose Black Phenyl for super-strong cleaning, Herbal White for classic freshness, or Mogra, Kewda & Lavender, Jasmine, and Pink Rose for a floral finish.' },
   { question: 'Which pack size is right for me?', answer: '500 ml and 1 L packs work well for regular home use. Larger packs are useful for bigger homes, offices, shops, and frequent cleaning.' },
   { question: 'How can I place an order?', answer: 'Use any Order on WhatsApp button on the website and our team can confirm the product, pack size, price, and delivery details.' },
 ];
@@ -38,7 +38,12 @@ const Contact = () => {
             <p>For fast product and order support, send us a WhatsApp message. You can also write to us by email using the details below.</p>
             <a href={whatsappUrl} target="_blank" rel="noreferrer" className="contact-channel contact-channel--whatsapp">
               <span className="material-icons">chat</span>
-              <div><strong>WhatsApp</strong><small>Chat about products and orders</small></div>
+              <div><strong>WhatsApp</strong><small>{config.contactPhone}</small></div>
+              <span className="material-icons">arrow_outward</span>
+            </a>
+            <a href={config.contactPhoneHref} className="contact-channel">
+              <span className="material-icons">phone</span>
+              <div><strong>Mobile</strong><small>{config.contactPhone}</small></div>
               <span className="material-icons">arrow_outward</span>
             </a>
             <a href={`mailto:${config.contactEmail}`} className="contact-channel">

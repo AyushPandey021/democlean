@@ -26,7 +26,8 @@ const Footer = () => {
             <div>
               <h4>Need help?</h4>
               <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp us</a>
-              <a href={`mailto:${config.contactEmail}`}>{config.contactEmail}</a>
+              <a href={config.contactPhoneHref}>Mobile: {config.contactPhone}</a>
+              <a href={`mailto:${config.contactEmail}`}>Email: {config.contactEmail}</a>
               <span>Mon–Sat, 9 AM–7 PM</span>
             </div>
           </div>

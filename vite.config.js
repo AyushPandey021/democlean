@@ -28,9 +28,10 @@ export default defineConfig(({ mode }) => {
     // Define environment variables for runtime access
     define: {
       __APP_CONFIG__: {
-        whatsappNumber: JSON.stringify(env.VITE_WHATSAPP_NUMBER || '919XXXXXXXXX'),
+        whatsappNumber: JSON.stringify(env.VITE_WHATSAPP_NUMBER || '919098667176'),
         siteName: JSON.stringify(env.VITE_SITE_NAME || 'DEMOCLEAN'),
-        contactEmail: JSON.stringify(env.VITE_CONTACT_EMAIL || 'contact@democlean.com'),
+        contactEmail: JSON.stringify(env.VITE_CONTACT_EMAIL || 'vishalandvishal70@gmail.com'),
+        contactPhone: JSON.stringify(env.VITE_CONTACT_PHONE || '+91 9098667176'),
       },
     },
   };
